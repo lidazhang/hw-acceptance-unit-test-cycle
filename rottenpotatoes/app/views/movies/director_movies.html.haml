@@ -1,4 +1,4 @@
-%h1 Search Movies by Director //#{@director}
+%h1 Movies from Same Director
 
 %table#movies
   %thead
@@ -9,7 +9,7 @@
       %th Director
       %th More Info
   %tbody
-    - @director_movies.each do |movie|
+    - @movie.each do |movie|
       %tr
         %td= movie.title 
         %td= movie.rating

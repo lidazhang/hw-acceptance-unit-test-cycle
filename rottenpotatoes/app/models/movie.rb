@@ -4,8 +4,9 @@ class Movie < ActiveRecord::Base
   end
   
   def self.find_director_movies id
-    director = Movie.find(id).director
-    return nil if director.blank? || director.nil?
-    Movie.where(director => director)
+    id.nil? ? nil : Movie.where(:director => id).to_a()
+    # director = Movie.find(id).director
+    # return nil if director.blank? || director.nil?
+    # Movie.where(director => director)
   end
 end
